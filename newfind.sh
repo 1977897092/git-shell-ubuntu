@@ -24,9 +24,12 @@ fi
             echo "####### find over ####### ";
             exit;;
             
-       
-        -c)
-            exit;;
+            #查找所有包含clk字符的.c文件
+        -c)find /home/dyj/Share/linux -name "*.c"|cat|while read line
+           do
+           grep -l clk $line
+           done      
+           exit;;
         -git)
             ;;
         -help) echo "$0 $1 is not an option";
