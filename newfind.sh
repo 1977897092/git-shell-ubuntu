@@ -1,12 +1,13 @@
 #! /bin/bash
-#
+touch fd.txt
 if [ ! $1 ]
 then
   echo "####### please input value #######"
   echo "$0 $1 is not an option"
   echo "$0 -a : find clk* "
   echo "$0 -b : find clk*.c"
-  echo "$0 -c : git option"
+  echo "$0 -c : find 'clk' in c files "
+  echo "$0 -help : help "
   echo "$0 -git 'file' 'commit' ' branch ' : update your project to github"
   exit;
 fi
@@ -19,13 +20,16 @@ fi
             
             #查找所有以clk开头的.c文件
         -b) echo "####### start find ####### ";
-            find /home/dyj/Share/linux/ -name "clk*"|grep ".c";
+            find /home/dyj/Share/linux/ -name "clk*.c"
             echo "####### find over ####### ";
             exit;;
             
+       
+        -c)
+            exit;;
         -git)
             ;;
-         -help) echo "$0 $1 is not an option";
+        -help) echo "$0 $1 is not an option";
             echo "$0 -a : find clk* ";
             echo "$0 -b : find clk*.c";
             echo "$0 -c : git option";
@@ -61,22 +65,16 @@ git status
 
 sleep 1s
 
-echo "####### 添加文件 #######"
+echo "####### please input file name #######"
 
 git commit -m "$3"
 
-echo "####### commit #######"
+echo "####### please input commit information #######"
 
 sleep 1s
 
-echo "####### 开始推送 #######"
-
-if [ ! $4 ]
-then
-  echo "####### 请输入自己提交代码的分支 #######"
-  exit;
-fi
+echo "####### start push #######"
 
 git push origin "$4"
 
-echo "####### 推送成功 #######"
+echo "####### push origin successful   #######"
