@@ -53,7 +53,7 @@ then
     exit;
 fi
 
-git add .
+git add $2
 
 git status
 
