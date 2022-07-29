@@ -7,12 +7,13 @@ then
   echo "$0 -a : find clk* "
   echo "$0 -b : find clk*.c"
   echo "$0 -c : git option"
+  echo "$0 -git 'file' 'commit' ' branch ' : update your project to github"
   exit;
 fi
     case "$1" in
             #查找kernel目录下的以clk开头的文件
         -a) echo "####### start find ####### ";
-            find /home/dyj/Share/linux/kernel -name "clk*";
+            find /home/dyj/Share/linux/ -name "clk*";
             echo "####### find over ####### ";
             exit;;
             
