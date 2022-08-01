@@ -1,0 +1,3 @@
+#! /bin/sh
+#寻找用户shell脚本 finduser
+who | grep $1
