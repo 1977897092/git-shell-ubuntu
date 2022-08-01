@@ -30,6 +30,13 @@ fi
            grep -l clk $line
            done      
            exit;;
+           #查找包含clk字符的.c文件
+        -d)find /home/dyj/Share/linux -name "*.c"|xargs grep -l "clk";
+           exit;; 
+           #查找包含clk字符的文件
+        -e)grep -l -r "clk" /home/dyj/Share/linux 
+           exit;;
+           #-git 执行git代码提交指令
         -git)
             ;;
         -help) echo "$0 $1 is not an option";
@@ -64,17 +71,11 @@ git add $2
 
 git status
 
-#写个sleep 1s 是为了解决并发导致卡壳
-
-sleep 1s
-
 echo "####### please input file name #######"
 
 git commit -m "$3"
 
-echo "####### please input commit information #######"
-
-sleep 1s
+echo "####### please input commit information #######
 
 echo "####### start push #######"
 
