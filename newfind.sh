@@ -68,17 +68,6 @@ then
 fi
 
 git add $2
-
 git status
-
-echo "####### please input file name #######"
-
 git commit -m "$3"
-
-echo "####### please input commit information #######
-
-echo "####### start push #######"
-
 git push origin "$4"
-
-echo "####### push origin successful   #######"
