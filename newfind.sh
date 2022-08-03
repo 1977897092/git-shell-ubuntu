@@ -34,9 +34,34 @@ fi
         -d)find /home/dyj/Share/linux -name "*.c"|xargs grep -l "clk";
            exit;; 
            #查找包含clk字符的文件
-        -e)grep -l -r "clk" /home/dyj/Share/linux 
+        -e)grep -l -r "clk" /home/dyj/Share/linux;
+           exit;;
+           #查找包含clk的c文件
+        -f)grep -l -r "clk" /home/dyj/Share/linux --include="*.c";
            exit;;
            #-git 执行git代码提交指令
+        
+        -gitlocal)
+            if [ ! $2 ]
+            then
+            echo "please input file "
+            exit;
+            fi
+            if [ ! $3 ]
+            then
+            echo "please input commit "
+            exit;
+            fi
+            if [ ! $4 ]
+            then
+            echo "please input branch "
+            exit;
+            fi
+            git add $2;
+            git status;
+            git commit -m  $3;:
+            exit;;
+
         -git)
             ;;
         -help) echo "$0 $1 is not an option";
