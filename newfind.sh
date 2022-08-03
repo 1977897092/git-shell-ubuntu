@@ -62,8 +62,28 @@ fi
             git commit -m  $3;:
             exit;;
 
-        -git)
-            ;;
+             -git)
+             if [ ! $2 ]
+            then
+                echo "please input file "
+            exit;
+            fi
+            if [ ! $3 ]
+            then
+                echo "please input commit "
+            exit;
+            fi
+            if [ ! $4 ]
+            then
+                echo "please input branch "
+            exit;
+            fi
+
+            git add $2
+            git status
+            git commit -m "$3"
+            git push origin "$4"
+            exit;;
         -help) echo "$0 $1 is not an option";
             echo "$0 -a : find clk* ";
             echo "$0 -b : find clk*.c";
@@ -76,23 +96,3 @@ fi
             echo "$0 -c : git option";
             exit;;
     esac
-if [ ! $2 ]
-then
-    echo "please input file "
-    exit;
-fi
-if [ ! $3 ]
-then
-    echo "please input commit "
-    exit;
-fi
-if [ ! $4 ]
-then
-    echo "please input branch "
-    exit;
-fi
-
-git add $2
-git status
-git commit -m "$3"
-git push origin "$4"
