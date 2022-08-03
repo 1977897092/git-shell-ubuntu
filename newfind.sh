@@ -1,5 +1,4 @@
 #! /bin/bash
-touch fd.txt
 if [ ! $1 ]
 then
   echo "####### please input value #######"
@@ -62,7 +61,7 @@ fi
             git commit -m  $3;:
             exit;;
 
-             -git)
+          -git)
              if [ ! $2 ]
             then
                 echo "please input file "
