@@ -1,13 +1,18 @@
 #! /bin/bash
+#将shell的功能作为函数封装起来
+help_information(){
+  echo "####### please input value #######";
+  echo "$0 $1 is not an option";
+  echo "$0 -a : find clk* ";
+  echo "$0 -b : find clk*.c";
+  echo "$0 -c : find 'clk' in c files ";
+  echo "$0 -help : help ";
+  echo "$0 -git 'file' 'commit' ' branch ' : update your project to github";
+}
+
 if [ ! $1 ]
 then
-  echo "####### please input value #######"
-  echo "$0 $1 is not an option"
-  echo "$0 -a : find clk* "
-  echo "$0 -b : find clk*.c"
-  echo "$0 -c : find 'clk' in c files "
-  echo "$0 -help : help "
-  echo "$0 -git 'file' 'commit' ' branch ' : update your project to github"
+  help_information;
   exit;
 fi
     case "$1" in
