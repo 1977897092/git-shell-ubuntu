@@ -1,5 +1,7 @@
 #! /bin/bash
 #openssl编译安装相关路径、参数指定
+#openssl bin:/home/dyj/Share/openssl/arm_openssl/bin
+#curl bin:/home/dyj/Share/curl/arm_curl/bin
 #指定openssl的压缩包解压后所在的文件夹
 openssl_package_path="/home/dyj/Share/openssl-1.1.1c"
 #指定openssl的安装路径
