@@ -4,10 +4,25 @@
 openssl_package_path="/home/dyj/Share/openssl-1.1.1c"
 #指定openssl的安装路径
 openssl_install_path=""
+#指定编译链工具（交叉编译 or ?）
+openssl_compiler=""
+#指定编译目标运行平台
+openssl_host=""
+#编译链工具配置
+openssl_compiler_sysroot_path=""
+
 
 #curl编译安装相关路径、参数指定
+#指定curl的压缩包解压后所在的文件夹
 curl_package_path="/home/dyj/Share/curl-7.76.1"
+#指定curl的安装路径
 curl_install_path=""
+#指定编译链工具（交叉编译 or ?）
+openssl_compiler=""
+#指定编译目标运行平台
+openssl_host=""
+#编译链工具配置
+openssl_compiler_sysroot_path=""
 
 cd $openssl_package_path
 ./Configure no-asm shared no-async linux-armv4 --prefix=/home/dyj/Share/openssl/arm_openssl --cross-compile-prefix=arm-oe-linux-gnueabi- --sysroot=/home/dyj/Share/sim_open_sdk/sim_crosscompile/sysroots/mdm9607-perf
